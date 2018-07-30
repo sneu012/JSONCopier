@@ -1,0 +1,3224 @@
+{
+  "schema": {
+    "required": [],
+    "type": "object",
+    "properties": {
+      "encounterDate": {
+        "type": "string",
+        "title": "Encounter Date",
+        "format": "date"
+      },
+      "visitType": {
+        "type": "string",
+        "title": "Visit Type",
+        "enum": [
+          "OFICE",
+          "OTHER"
+        ],
+        "enumNames": [
+          "Office",
+          "Other"
+        ]
+      },
+      "intro": {
+        "type": "object",
+        "title": "Intro",
+        "properties": {
+          "developedbytext": {
+            "templatable": true,
+            "type": "string",
+            "title": "Developed by Boris Birmaher, M.D., Suneeta Khetarpal, M.D., Marlane Cully, M.Ed., David Brent, M.D., and Sandra McKenzie, Ph.D., Western Psychiatric Institute and Clinic, University of Pittsburgh (October, 1995). E-mail: birmaherb@upmc.edu"
+          },
+          "reference": {
+            "templatable": true,
+            "type": "string",
+            "title": "See: Birmaher, B., Brent, D. A., Chiappetta, L., Bridge, J., Monga, S., & Baugher, M. (1999). Psychometric properties of the Screen for Child Anxiety Related Emotional Disorders (SCARED): a replication study. Journal of the American Academy of Child and Adolescent Psychiatry, 38(10), 1230–6."
+          },
+          "textname": {
+            "templatable": true,
+            "type": "string",
+            "title": "Name"
+          },
+          "textdate": {
+            "templatable": true,
+            "type": "string",
+            "title": "Date"
+          }
+        }
+      },
+      "tabular": {
+        "title": "Screen for Child Anxiety Related Disorders (SCARED)",
+        "type": "object",
+        "required": [],
+        "properties": {
+          "tabularTitle": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "directions": {
+                "title": "Directions:",
+                "type": "string"
+              },
+              "directionsdata": {
+                "title": "Below is a list of sentences that describe how people feel. Read each phrase and decide if it is “Not True or Hardly Ever True” or “Somewhat True or Sometimes True” or “Very True or Often True” for you. Then,  for each sentence, fill in one circle that corresponds to the response that seems to describe you for the last 3 months.",
+                "type": "string"
+              }
+            }
+          },
+          "header": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "notTrue": {
+                "title": "Not True or Hardly Ever True",
+                "type": "string"
+              },
+              "sometimesTrue": {
+                "title": "Somewhat True or Sometimes True",
+                "type": "string"
+              },
+              "veryTrue": {
+                "title": "Very True or Often True",
+                "type": "string"
+              }
+            }
+          },
+          "rowOne": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "frightened": {
+                "title": "1. When I feel frightened, it is hard to breathe",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "pn": {
+                "title": "PN",
+                "type": "string"
+              }
+            }
+          },
+          "rowTwo": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "headaches": {
+                "title": "2. I get headaches when I am at school",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "sh": {
+                "title": "SH",
+                "type": "string"
+              }
+            }
+          },
+          "rowThree": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "people": {
+                "title": "3. I don’t like to be with people I don’t know well",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "sc": {
+                "title": "SC",
+                "type": "string"
+              }
+            }
+          },
+          "rowFour": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "scared": {
+                "title": "4. I get scared if I sleep away from home",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "sp": {
+                "title": "SP",
+                "type": "string"
+              }
+            }
+          },
+          "rowFive": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "liking": {
+                "title": "5. I worry about other people liking me",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "gd": {
+                "title": "GD",
+                "type": "string"
+              }
+            }
+          },
+          "rowSix": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "frightened": {
+                "title": "6. When I get frightened, I feel like passing out",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "pn": {
+                "title": "PN",
+                "type": "string"
+              }
+            }
+          },
+          "rowSeven": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "nervous": {
+                "title": "7. I am nervous",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "gd": {
+                "title": "GD",
+                "type": "string"
+              }
+            }
+          },
+          "roweight": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "mother": {
+                "title": "8. I follow my mother or father wherever they go",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "sp": {
+                "title": "SP",
+                "type": "string"
+              }
+            }
+          },
+          "rownine": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "looknervous": {
+                "title": "9. People tell me that I look nervous",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "pn": {
+                "title": "PN",
+                "type": "string"
+              }
+            }
+          },
+          "rowten": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "nervous": {
+                "title": "10. I feel nervous with people I don’t know well",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "sc": {
+                "title": "SC",
+                "type": "string"
+              }
+            }
+          },
+          "roweleven": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "stomachaches": {
+                "title": "11. I get stomachaches at school",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "sh": {
+                "title": "SH",
+                "type": "string"
+              }
+            }
+          },
+          "rowtwelve": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "frightened": {
+                "title": "12. When I get frightened, I feel like I am going crazy",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "pn": {
+                "title": "PN",
+                "type": "string"
+              }
+            }
+          },
+          "rowthirteen": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "sleeping": {
+                "title": "13. I worry about sleeping alone",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "sp": {
+                "title": "SP",
+                "type": "string"
+              }
+            }
+          },
+          "rowfourteen": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "worry": {
+                "title": "14. I worry about being as good as other kids",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "gd": {
+                "title": "GD",
+                "type": "string"
+              }
+            }
+          },
+          "rowfifteen": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "frightened": {
+                "title": "15. When I get frightened, I feel like things are not real",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "pn": {
+                "title": "PN",
+                "type": "string"
+              }
+            }
+          },
+          "rowsixteen": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "nightmares": {
+                "title": "16. I have nightmares about something bad happening to my parents",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "sp": {
+                "title": "SP",
+                "type": "string"
+              }
+            }
+          },
+          "rowseventeen": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "school": {
+                "title": "17. I worry about going to school",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "sh": {
+                "title": "SH",
+                "type": "string"
+              }
+            }
+          },
+          "roweighteen": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "frightened": {
+                "title": "18. When I get frightened, my heart beats fast",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "pn": {
+                "title": "PN",
+                "type": "string"
+              }
+            }
+          },
+          "rownineteen": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "shaky": {
+                "title": "19. I get shaky",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "pn": {
+                "title": "PN",
+                "type": "string"
+              }
+            }
+          },
+          "rowtwenty": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "nightmares": {
+                "title": "20. I have nightmares about something bad happening to me",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "sp": {
+                "title": "SP",
+                "type": "string"
+              }
+            }
+          },
+          "rowtwentyone": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "working": {
+                "title": "21. I worry about things working out for me",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "gd": {
+                "title": "GD",
+                "type": "string"
+              }
+            }
+          },
+          "rowtwentytwo": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "frightened": {
+                "title": "22. When I get frightened, I sweat a lot",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "pn": {
+                "title": "PN",
+                "type": "string"
+              }
+            }
+          },
+          "rowtwentythree": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "worrier": {
+                "title": "23. I am a worrier",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "gd": {
+                "title": "GD",
+                "type": "string"
+              }
+            }
+          },
+          "rowtwentyfour": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "frightened": {
+                "title": "24. I get really frightened for no reason at al",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "pn": {
+                "title": "PN",
+                "type": "string"
+              }
+            }
+          },
+          "rowtwentyfive": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "alone": {
+                "title": "25. I am afraid to be alone in the house",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "sp": {
+                "title": "SP",
+                "type": "string"
+              }
+            }
+          },
+          "rowtwentysix": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "people": {
+                "title": "26. It is hard for me to talk with people I don’t know well",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "sc": {
+                "title": "SC",
+                "type": "string"
+              }
+            }
+          },
+          "rowtwentyseven": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "frightened": {
+                "title": "27. When I get frightened, I feel like I am choking",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "pn": {
+                "title": "PN",
+                "type": "string"
+              }
+            }
+          },
+          "rowtwentyeight": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "worry": {
+                "title": "28. People tell me that I worry too much",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "gd": {
+                "title": "GD",
+                "type": "string"
+              }
+            }
+          },
+          "rowtwentynine": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "away": {
+                "title": "29. I don’t like to be away from my family",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "sp": {
+                "title": "SP",
+                "type": "string"
+              }
+            }
+          },
+          "rowthirty": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "anxiety": {
+                "title": "30. I  am afraid of having anxiety (or panic) attacks",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "pn": {
+                "title": "PN",
+                "type": "string"
+              }
+            }
+          },
+          "rowthirtyone": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "parents": {
+                "title": "31. I  worry   that something bad might happen to my parents",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "sp": {
+                "title": "SP",
+                "type": "string"
+              }
+            }
+          },
+          "rowthirtytwo": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "people": {
+                "title": "32. I feel shy with people I don’t know well",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "sc": {
+                "title": "SC",
+                "type": "string"
+              }
+            }
+          },
+          "rowthirtythree": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "worry": {
+                "title": "33. I  worry about what is going to happen in the future",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "gd": {
+                "title": "GD",
+                "type": "string"
+              }
+            }
+          },
+          "rowthirtyfour": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "frightened": {
+                "title": "34. When I get frightened, I feel like throwing up",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "pn": {
+                "title": "PN",
+                "type": "string"
+              }
+            }
+          },
+          "rowthirtyfive": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "worry": {
+                "title": "35. I  worry about how well I do things",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "gd": {
+                "title": "GD",
+                "type": "string"
+              }
+            }
+          },
+          "rowthirtysix": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "scared": {
+                "title": "36. I am scared to go to school",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "sh": {
+                "title": "SH",
+                "type": "string"
+              }
+            }
+          },
+          "rowthirtyseven": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "worry": {
+                "title": "37. I worry about things that have already happened",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "gd": {
+                "title": "GD",
+                "type": "string"
+              }
+            }
+          },
+          "rowthirtyeight": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "frightened": {
+                "title": "38. When I get frightened, I feel dizzy",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "pn": {
+                "title": "PN",
+                "type": "string"
+              }
+            }
+          },
+          "rowthirtynine": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "nervous": {
+                "title": "39. I feel nervous when I am with other children or adults and I have to do something while they watch me (for example: read aloud, speak, play a       game, play a sport)",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "sc": {
+                "title": "SC",
+                "type": "string"
+              }
+            }
+          },
+          "rowforty": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "parties": {
+                "title": "40. I feel nervous when I am going to parties, dances, or any place where there will be people that I don’t know well",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "sc": {
+                "title": "SC",
+                "type": "string"
+              }
+            }
+          },
+          "rowfortyone": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "shy": {
+                "title": "41. I am shy",
+                "type": "string"
+              },
+              "notTrue": {
+                "title": "0",
+                "type": "boolean"
+              },
+              "sometimesTrue": {
+                "title": "1",
+                "type": "boolean"
+              },
+              "veryTrue": {
+                "title": "2",
+                "type": "boolean"
+              },
+              "sc": {
+                "title": "SC",
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "scoring": {
+        "type": "object",
+        "title": "scoring",
+        "properties": {
+          "scoreAboveTwentyFive": {
+            "type": "string",
+            "title": "A total score of ≥ 25 may indicate the presence of an Anxiety Disorder. Scores higher than 30 are more specific."
+          },
+          "scoreOfSeven": {
+            "type": "string",
+            "title": "A score of 7 for items 1, 6, 9, 12, 15, 18, 19, 22, 24, 27, 30, 34, 38 may indicate Panic Disorder or Significant Somatic Symptoms."
+          },
+          "scoreOfNine": {
+            "type": "string",
+            "title": "A score of 9 for items 5, 7, 14, 21, 23, 28, 33, 35, 37 may indicate Generalized Anxiety Disorder."
+          },
+          "scoreOfFive": {
+            "type": "string",
+            "title": "A score of 5 for items 4, 8, 13, 16, 20, 25, 29, 31 may indicate Separation Anxiety SOC."
+          },
+          "scoreOfEight": {
+            "type": "string",
+            "title": "A score of 8 for items 3, 10, 26, 32, 39, 40, 41 may indicate Social Anxiety Disorder."
+          },
+          "scoreOfThree": {
+            "type": "string",
+            "title": "A score of 3 for items 2, 11, 17, 36 may indicate Significant School Avoidance."
+          },
+          "childrenEightEleven": {
+            "type": "string",
+            "title": "For children ages 8 to 11, it is recommended that the clinician explain all questions, or have the child answer the questionnaire sitting with an adult in case they have any questions."
+          },
+          "referalsite": {
+            "type": "string",
+            "title": "The SCARED is available at no cost at www.wpic.pitt.edu/research under tools and assessments, or at www.pediatric bipolar.pitt.edu under instruments"
+          }
+        }
+      }
+    }
+  },
+  "uiSchema": {
+    "ui:order": [
+      "encounterDate",
+      "visitType",
+      "intro",
+      "tabular",
+      "scoring"
+    ],
+    "navConf": {
+      "navs": [
+        {
+          "nav": "Screen for Child Anxiety Related Disorders",
+          "name": "Scared Child- NPC",
+          "icon": "glyphicons glyphicons-list-alt"
+        }
+      ],
+      "order": [
+        "Screen for Child Anxiety Related Disorders"
+      ]
+    },
+    "encounterDate": {
+      "classNames": "col-md-2 col-xs-2",
+      "ui:field": "rdp",
+      "rdp": {
+        "placeholder": "MM/DD/YYYY"
+      }
+    },
+    "visitType": {
+      "classNames": "col-md-2 col-xs-2",
+      "ui:placeholder": "Chose One"
+    },
+    "intro": {
+      "classNames": "col-md-12 individualComponent",
+      "ui:field": "collapsible",
+      "nav": "Screen for Child Anxiety Related Disorders",
+      "ui:order": [
+        "developedbytext",
+        "reference",
+        "textname",
+        "textdate"
+      ],
+      "pdfRender": "inputComponents",
+      "pdfListType": "list",
+      "developedbytext": {
+        "classNames": "col-md-12 margin-tp-10",
+        "ui:field": "simpleLabel",
+        "simpleLabel": {
+          "styles": {
+            "color": "black",
+            "fontSize": 14
+          }
+        },
+        "pdfProp": "displayLabelInPdf",
+        "pdfStyle": {
+          "fontSize": 7
+        }
+      },
+      "reference": {
+        "classNames": "col-md-12 margin-tp-10",
+        "ui:field": "simpleLabel",
+        "simpleLabel": {
+          "styles": {
+            "color": "black",
+            "fontSize": 14
+          }
+        },
+        "pdfProp": "displayLabelInPdf",
+        "pdfStyle": {
+          "fontSize": 7,
+          "italics": true
+        }
+      },
+      "textname": {
+        "classNames": "col-md-4",
+        "ui:placeholder": "Name",
+        "pdfStyle": {
+          "fontSize": 8
+        }
+      },
+      "textdate": {
+        "classNames": "col-md-4",
+        "ui:placeholder": "Date",
+        "pdfStyle": {
+          "fontSize": 8
+        }
+      },
+      "ui:options": {
+        "label": false
+      },
+      "collapse": {
+        "field": "ObjectField",
+        "collapsed": false
+      }
+    },
+    "tabular": {
+      "classNames": "col-md-12 individualComponent",
+      "ui:field": "collapsible",
+      "nav": "Screen for Child Anxiety Related Disorders",
+      "pdfRender": "tabular",
+      "tabularTitle": {
+        "classNames": "col-md-12",
+        "directions": {
+          "classNames": "col-md-12  familyhistory",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14,
+              "fontWeight": "bold"
+            }
+          },
+          "pdfProp": "displayLabelInPdf"
+        },
+        "directionsdata": {
+          "classNames": "col-md-12  familyhistory",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "displayLabelInPdf"
+        },
+        "ui:order": [
+          "directions",
+          "directionsdata"
+        ]
+      },
+      "header": {
+        "classNames": "col-md-12",
+        "notTrue": {
+          "classNames": "col-md-2 col-md-offset-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 16
+            }
+          },
+          "pdfProp": "header"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 16
+            }
+          },
+          "pdfProp": "header"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 16
+            }
+          },
+          "pdfProp": "header"
+        },
+        "ui:order": [
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue"
+        ]
+      },
+      "rowOne": {
+        "classNames": "col-md-12",
+        "frightened": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "pn": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "frightened",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "pn"
+        ]
+      },
+      "rowTwo": {
+        "classNames": "col-md-12",
+        "headaches": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "sh": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "headaches",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "sh"
+        ]
+      },
+      "rowThree": {
+        "classNames": "col-md-12",
+        "people": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "sc": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "people",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "sc"
+        ]
+      },
+      "rowFour": {
+        "classNames": "col-md-12",
+        "scared": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "sp": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "scared",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "sp"
+        ]
+      },
+      "rowFive": {
+        "classNames": "col-md-12",
+        "liking": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "gd": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "liking",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "gd"
+        ]
+      },
+      "rowSix": {
+        "classNames": "col-md-12",
+        "frightened": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "pn": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "frightened",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "pn"
+        ]
+      },
+      "rowSeven": {
+        "classNames": "col-md-12",
+        "nervous": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "gd": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "nervous",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "gd"
+        ]
+      },
+      "roweight": {
+        "classNames": "col-md-12",
+        "mother": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "sp": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "mother",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "sp"
+        ]
+      },
+      "rownine": {
+        "classNames": "col-md-12",
+        "looknervous": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "pn": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "looknervous",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "pn"
+        ]
+      },
+      "rowten": {
+        "classNames": "col-md-12",
+        "nervous": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "sc": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "nervous",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "sc"
+        ]
+      },
+      "roweleven": {
+        "classNames": "col-md-12",
+        "stomachaches": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "sh": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "stomachaches",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "sh"
+        ]
+      },
+      "rowtwelve": {
+        "classNames": "col-md-12",
+        "frightened": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "pn": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "frightened",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "pn"
+        ]
+      },
+      "rowthirteen": {
+        "classNames": "col-md-12",
+        "sleeping": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "sp": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "sleeping",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "sp"
+        ]
+      },
+      "rowfourteen": {
+        "classNames": "col-md-12",
+        "worry": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "gd": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "worry",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "gd"
+        ]
+      },
+      "rowfifteen": {
+        "classNames": "col-md-12",
+        "frightened": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "pn": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "frightened",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "pn"
+        ]
+      },
+      "rowsixteen": {
+        "classNames": "col-md-12",
+        "nightmares": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "sp": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "nightmares",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "sp"
+        ]
+      },
+      "rowseventeen": {
+        "classNames": "col-md-12",
+        "school": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "sh": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "school",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "sh"
+        ]
+      },
+      "roweighteen": {
+        "classNames": "col-md-12",
+        "frightened": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "pn": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "frightened",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "pn"
+        ]
+      },
+      "rownineteen": {
+        "classNames": "col-md-12",
+        "shaky": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "pn": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "shaky",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "pn"
+        ]
+      },
+      "rowtwenty": {
+        "classNames": "col-md-12",
+        "nightmares": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "sp": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "nightmares",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "sp"
+        ]
+      },
+      "rowtwentyone": {
+        "classNames": "col-md-12",
+        "working": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "gd": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "working",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "gd"
+        ]
+      },
+      "rowtwentytwo": {
+        "classNames": "col-md-12",
+        "frightened": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "pn": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "frightened",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "pn"
+        ]
+      },
+      "rowtwentythree": {
+        "classNames": "col-md-12",
+        "worrier": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "gd": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "worrier",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "gd"
+        ]
+      },
+      "rowtwentyfour": {
+        "classNames": "col-md-12",
+        "frightened": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "pn": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "frightened",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "pn"
+        ]
+      },
+      "rowtwentyfive": {
+        "classNames": "col-md-12",
+        "alone": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "sp": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "alone",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "sp"
+        ]
+      },
+      "rowtwentysix": {
+        "classNames": "col-md-12",
+        "people": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "sc": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "people",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "sc"
+        ]
+      },
+      "rowtwentyseven": {
+        "classNames": "col-md-12",
+        "frightened": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "pn": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "frightened",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "pn"
+        ]
+      },
+      "rowtwentyeight": {
+        "classNames": "col-md-12",
+        "worry": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "gd": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "worry",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "gd"
+        ]
+      },
+      "rowtwentynine": {
+        "classNames": "col-md-12",
+        "away": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "sp": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "away",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "sp"
+        ]
+      },
+      "rowthirty": {
+        "classNames": "col-md-12",
+        "anxiety": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "pn": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "anxiety",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "pn"
+        ]
+      },
+      "rowthirtyone": {
+        "classNames": "col-md-12",
+        "parents": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "sp": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "parents",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "sp"
+        ]
+      },
+      "rowthirtytwo": {
+        "classNames": "col-md-12",
+        "people": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "sc": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "people",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "sc"
+        ]
+      },
+      "rowthirtythree": {
+        "classNames": "col-md-12",
+        "worry": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "gd": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "worry",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "gd"
+        ]
+      },
+      "rowthirtyfour": {
+        "classNames": "col-md-12",
+        "frightened": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "pn": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "frightened",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "pn"
+        ]
+      },
+      "rowthirtyfive": {
+        "classNames": "col-md-12",
+        "worry": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "gd": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "worry",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "gd"
+        ]
+      },
+      "rowthirtysix": {
+        "classNames": "col-md-12",
+        "scared": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "sh": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "scared",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "sh"
+        ]
+      },
+      "rowthirtyseven": {
+        "classNames": "col-md-12",
+        "worry": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "gd": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "worry",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "gd"
+        ]
+      },
+      "rowthirtyeight": {
+        "classNames": "col-md-12",
+        "frightened": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "pn": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "frightened",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "pn"
+        ]
+      },
+      "rowthirtynine": {
+        "classNames": "col-md-12",
+        "nervous": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "sc": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "nervous",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "sc"
+        ]
+      },
+      "rowforty": {
+        "classNames": "col-md-12",
+        "parties": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "sc": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "parties",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "sc"
+        ]
+      },
+      "rowfortyone": {
+        "classNames": "col-md-12",
+        "shy": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "notTrue": {
+          "classNames": "col-md-2"
+        },
+        "sometimesTrue": {
+          "classNames": "col-md-2"
+        },
+        "veryTrue": {
+          "classNames": "col-md-2"
+        },
+        "sc": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          }
+        },
+        "ui:order": [
+          "shy",
+          "notTrue",
+          "sometimesTrue",
+          "veryTrue",
+          "sc"
+        ]
+      },
+      "ui:order": [
+        "tabularTitle",
+        "header",
+        "rowOne",
+        "rowTwo",
+        "rowThree",
+        "rowFour",
+        "rowFive",
+        "rowSix",
+        "rowSeven",
+        "roweight",
+        "rownine",
+        "rowten",
+        "roweleven",
+        "rowtwelve",
+        "rowthirteen",
+        "rowfourteen",
+        "rowfifteen",
+        "rowsixteen",
+        "rowseventeen",
+        "roweighteen",
+        "rownineteen",
+        "rowtwenty",
+        "rowtwentyone",
+        "rowtwentytwo",
+        "rowtwentythree",
+        "rowtwentyfour",
+        "rowtwentyfive",
+        "rowtwentysix",
+        "rowtwentyseven",
+        "rowtwentyeight",
+        "rowtwentynine",
+        "rowthirty",
+        "rowthirtyone",
+        "rowthirtytwo",
+        "rowthirtythree",
+        "rowthirtyfour",
+        "rowthirtyfive",
+        "rowthirtysix",
+        "rowthirtyseven",
+        "rowthirtyeight",
+        "rowthirtynine",
+        "rowforty",
+        "rowfortyone"
+      ],
+      "ui:options": {
+        "label": false
+      },
+      "collapse": {
+        "field": "ObjectField",
+        "collapsed": false
+      }
+    },
+    "scoring": {
+      "classNames": "col-md-12",
+      "ui:field": "collapsible",
+      "nav": "Screen for Child Anxiety Related Disorders",
+      "ui:order": [
+        "scoreAboveTwentyFive",
+        "scoreOfSeven",
+        "scoreOfNine",
+        "scoreOfFive",
+        "scoreOfEight",
+        "scoreOfThree",
+        "childrenEightEleven",
+        "referalsite"
+      ],
+      "pdfRender": "inputComponents",
+      "scoreAboveTwentyFive": {
+        "classNames": "col-md-11 inlineQuestionnaire",
+        "ui:placeholder": "Total="
+      },
+      "scoreOfSeven": {
+        "classNames": "col-md-11 inlineQuestionnaire",
+        "ui:placeholder": "PN="
+      },
+      "scoreOfNine": {
+        "classNames": "col-md-11 inlineQuestionnaire",
+        "ui:placeholder": "GD="
+      },
+      "scoreOfFive": {
+        "classNames": "col-md-11 inlineQuestionnaire",
+        "ui:placeholder": "SP="
+      },
+      "scoreOfEight": {
+        "classNames": "col-md-11 inlineQuestionnaire",
+        "ui:placeholder": "SC="
+      },
+      "scoreOfThree": {
+        "classNames": "col-md-11 inlineQuestionnaire",
+        "ui:placeholder": "SH="
+      },
+      "childrenEightEleven": {
+        "classNames": "col-md-11 inlineQuestionnaire",
+        "pdfProp": "displayLabelInPdf",
+        "ui:field": "simpleLabel",
+        "simpleLabel": {
+          "styles": {
+            "color": "black",
+            "fontSize": 14
+          }
+        }
+      },
+      "referalsite": {
+        "classNames": "col-md-11 inlineQuestionnaire",
+        "pdfProp": "displayLabelInPdf",
+        "ui:field": "simpleLabel",
+        "simpleLabel": {
+          "styles": {
+            "color": "black",
+            "fontSize": 14
+          }
+        }
+      },
+      "ui:options": {
+        "label": false
+      },
+      "collapse": {
+        "field": "ObjectField",
+        "collapsed": false
+      }
+    },
+    "pdfPreview": {
+      "pdfVersion": 1,
+      "defaultView": {
+        "order": [
+          "intro",
+          "tabular",
+          "scoring"
+        ]
+      }
+    }
+  },
+  "rules": []
+}

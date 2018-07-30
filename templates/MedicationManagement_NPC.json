@@ -1,0 +1,1902 @@
+{
+  "schema": {
+    "required": [],
+    "type": "object",
+    "properties": {
+      "encounterDate": {
+        "type": "string",
+        "title": "Encounter Date",
+        "format": "date"
+      },
+      "visitType": {
+        "type": "string",
+        "title": "Visit Type",
+        "enum": [
+          "OFICE",
+          "OTHER"
+        ],
+        "enumNames": [
+          "Office",
+          "Other"
+        ]
+      },
+      "intro": {
+        "type": "object",
+        "title": "Intro",
+        "properties": {
+          "textname": {
+            "templatable": true,
+            "type": "string",
+            "title": " Name:"
+          },
+          "date": {
+            "templatable": true,
+            "type": "string",
+            "title": "Date: "
+          },
+          "therapist": {
+            "templatable": true,
+            "type": "string",
+            "title": " Therapist:"
+          },
+          "insurance": {
+            "templatable": true,
+            "type": "string",
+            "title": "Insurance:"
+          }
+        }
+      },
+      "medicationData": {
+        "type": "object",
+        "title": "Current Medications",
+        "default": {},
+        "required": [],
+        "rxnt": "MedicationInfo",
+        "rxntMaster": "/EHRV8PatientEncounterAPIServices/ehrv8/rxntencounter/SyncPatientMedications",
+        "rxntUpdate": "/EHRV8PatientEncounterAPIServices/ehrv8/encounter/SearchPatientMedications/",
+        "properties": {
+          "medicationsNoActive": {
+            "type": "boolean",
+            "title": "No Active Medications",
+            "rxnt": "NoActiveMeds"
+          },
+          "medications": {
+            "type": "array",
+            "title": "Current Medications",
+            "default": [],
+            "rxnt": "PatientMedications",
+            "items": {
+              "required": [
+                "drugName",
+                "startDate"
+              ],
+              "type": "object",
+              "primaryKey": "patientMedId",
+              "properties": {
+                "drugId": {
+                  "type": "number",
+                  "title": "Drug Id",
+                  "rxnt": "Drug.DrugId"
+                },
+                "drugName": {
+                  "type": "string",
+                  "title": "Drug Name",
+                  "rxnt": "Drug.DrugName"
+                },
+                "dosage": {
+                  "type": "string",
+                  "title": "Dosage",
+                  "rxnt": "Dosage"
+                },
+                "quantity": {
+                  "type": "string",
+                  "title": "Quantity",
+                  "rxnt": "Quantity.Value",
+                  "maxLength": 3
+                },
+                "unit": {
+                  "type": "string",
+                  "title": "Units",
+                  "rxnt": [
+                    "Quantity.SelectedUnit.Id",
+                    "Quantity.SelectedUnit.Name"
+                  ],
+                  "enum": [
+                    "",
+                    "Ampule",
+                    "Applicator",
+                    "Applicatorful",
+                    "Bag",
+                    "Bars",
+                    "Bead",
+                    "Blister",
+                    "Block",
+                    "Bolus",
+                    "Bottles",
+                    "Boxes",
+                    "Can",
+                    "Canisters",
+                    "Caplet",
+                    "Capsules",
+                    "Carton",
+                    "Cartridge",
+                    "Case",
+                    "Cassette",
+                    "Container",
+                    "Cylinder",
+                    "Disk",
+                    "Dose Pack",
+                    "Dual Pack",
+                    "Film",
+                    "Fluid Ounce",
+                    "Gallon",
+                    "Grams",
+                    "Gum",
+                    "Implant",
+                    "Inhalation",
+                    "Inhaler Refill",
+                    "Inhalers",
+                    "Insert",
+                    "French",
+                    "Intravenous Bag",
+                    "Kilogram",
+                    "Kit",
+                    "Liter",
+                    "Lozenge",
+                    "Drops",
+                    "Milligram",
+                    "ML",
+                    "Millimeter",
+                    "Nebule",
+                    "Ocular System",
+                    "Ounce",
+                    "Package",
+                    "Lancet",
+                    "Pad",
+                    "Paper",
+                    "Patch",
+                    "Pint",
+                    "Pouch",
+                    "Pound",
+                    "Puff",
+                    "Quart",
+                    "Ring",
+                    "Sachet",
+                    "Scoopful",
+                    "Sponge",
+                    "Spray",
+                    "Stick",
+                    "Strip",
+                    "Suppository",
+                    "Swab",
+                    "Syringe",
+                    "Tablespoon Dosing Unit",
+                    "Tablets",
+                    "Tabminder",
+                    "Tampon",
+                    "Teaspoon Dosing Unit",
+                    "Tray",
+                    "Troche",
+                    "Tubes",
+                    "Vials",
+                    "Wafer",
+                    "Each",
+                    "Milliequivalent",
+                    "Needle Free Injection",
+                    "Pen Needle",
+                    "Pre-filled Pen Syringe",
+                    "Pump"
+                  ]
+                },
+                "refills": {
+                  "type": "number",
+                  "title": "Refills",
+                  "rxnt": "Refills",
+                  "minimum": 0,
+                  "maximum": 100
+                },
+                "useGeneric": {
+                  "type": "boolean",
+                  "title": "Use Generic",
+                  "default": true,
+                  "rxnt": "IsUseGeneric"
+                },
+                "patientMedId": {
+                  "type": "number",
+                  "title": "Patient Medication Id",
+                  "default": 0,
+                  "rxnt": "PatientMedId"
+                },
+                "startDate": {
+                  "type": "string",
+                  "title": "Start Date",
+                  "rxnt": "StartDate",
+                  "format": "date"
+                },
+                "isSelected": {
+                  "type": "boolean",
+                  "title": "Active",
+                  "rxnt": "IsSelected",
+                  "default": true
+                }
+              },
+              "defaultFilterKey": "isSelected"
+            }
+          }
+        }
+      },
+      "tabular": {
+        "title": "Medication Management Session",
+        "type": "object",
+        "required": [],
+        "properties": {
+          "header": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "category": {
+                "title": "CATEGORY",
+                "type": "string"
+              },
+              "wnl": {
+                "title": "Wnl",
+                "type": "string"
+              },
+              "abnormalities": {
+                "title": "Abnormalities",
+                "type": "string"
+              }
+            }
+          },
+          "rowOne": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "speech": {
+                "title": "Speech",
+                "type": "string"
+              },
+              "wnl": {
+                "title": "",
+                "type": "boolean"
+              },
+              "txtSpeech": {
+                "title": "Speech",
+                "type": "string"
+              }
+            }
+          },
+          "rowtwo": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "moodaffect": {
+                "title": "Mood/affect",
+                "type": "string"
+              },
+              "wnl": {
+                "title": "",
+                "type": "boolean"
+              },
+              "txtAbnormalities": {
+                "title": "abnormalities",
+                "type": "string"
+              }
+            }
+          },
+          "rowthree": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "orientation": {
+                "title": "Orientation",
+                "type": "string"
+              },
+              "wnl": {
+                "title": "",
+                "type": "boolean"
+              },
+              "txtOrientation": {
+                "title": "Orientation",
+                "type": "string"
+              }
+            }
+          },
+          "rowfour": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "attentionconc": {
+                "title": "Memory/attention/conc.",
+                "type": "string"
+              },
+              "wnl": {
+                "title": "",
+                "type": "boolean"
+              },
+              "txtattention": {
+                "title": "Memory/attention/conc",
+                "type": "string"
+              }
+            }
+          },
+          "rowfive": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "symptoms": {
+                "title": "Psychotic symptoms",
+                "type": "string"
+              },
+              "wnl": {
+                "title": "",
+                "type": "boolean"
+              },
+              "txtPsychoticsymptoms": {
+                "title": "Psychotic symptoms",
+                "type": "string"
+              }
+            }
+          },
+          "rowsix": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "agitation": {
+                "title": "Hyperactivity/agitation",
+                "type": "string"
+              },
+              "wnl": {
+                "title": "",
+                "type": "boolean"
+              },
+              "txtHyperactivity": {
+                "title": "Hyperactivity/agitation",
+                "type": "string"
+              }
+            }
+          },
+          "rowseven": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "thoughts": {
+                "title": "Suicidal thoughts",
+                "type": "string"
+              },
+              "wnl": {
+                "title": "",
+                "type": "boolean"
+              },
+              "txtSuicidal": {
+                "title": "Suicidal thoughts",
+                "type": "string"
+              }
+            }
+          },
+          "roweights": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "plan": {
+                "title": "Suicidal plan",
+                "type": "string"
+              },
+              "wnl": {
+                "title": "",
+                "type": "boolean"
+              },
+              "txtSuicidalplan": {
+                "title": "Suicidal plan",
+                "type": "string"
+              }
+            }
+          },
+          "rowten": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "homicplans": {
+                "title": "Homicidal thoughts",
+                "type": "string"
+              },
+              "wnl": {
+                "title": "",
+                "type": "boolean"
+              },
+              "txtHomicidalthoughts": {
+                "title": "Homicidal thoughts",
+                "type": "string"
+              }
+            }
+          },
+          "rowTwentyone": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "homicidallplan": {
+                "title": "Homicidal plan",
+                "type": "string"
+              },
+              "wnl": {
+                "title": "",
+                "type": "boolean"
+              },
+              "txtHomicidalplan": {
+                "title": "Homicidal plan",
+                "type": "string"
+              }
+            }
+          },
+          "rowTwentytwo": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "generalappearance": {
+                "title": "General appearance"
+              },
+              "appearance": {
+                "title": "Not at all Sure",
+                "type": "string"
+              }
+            }
+          },
+          "columnScore": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "p": {
+                "title": "P",
+                "type": "string"
+              },
+              "pp": {
+                "title": "Not at all Sure",
+                "type": "string"
+              },
+              "bp": {
+                "title": "BP",
+                "type": "string"
+              },
+              "bpa": {
+                "title": "Several Days",
+                "type": "string"
+              },
+              "weight": {
+                "title": "WEIGHT",
+                "type": "string"
+              },
+              "weighte": {
+                "title": "Over Half the Days",
+                "type": "string"
+              }
+            }
+          },
+          "rowTwentythree": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "others": {
+                "title": "Others"
+              },
+              "oth": {
+                "title": "Not at all Sure",
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "dxData": {
+        "type": "object",
+        "title": "Diagnosis",
+        "default": {},
+        "required": [],
+        "rxnt": "DiagnosisInfo",
+        "rxntMaster": "/EHRV8PatientEncounterAPIServices/ehrv8/rxntencounter/SyncPatientDiagnoses",
+        "rxntUpdate": "/EHRV8PatientEncounterAPIServices/ehrv8/encounter/SearchPatientDiagnosis/",
+        "properties": {
+          "diagnosis_no_problems": {
+            "type": "boolean",
+            "title": "No Current Problems",
+            "rxnt": "NoCurrentProblems"
+          },
+          "diagnosis": {
+            "type": "array",
+            "title": "Diagnosis",
+            "default": [],
+            "rxnt": "PatientDiagnoses",
+            "items": {
+              "required": [
+                "description"
+              ],
+              "type": "object",
+              "primaryKey": "patientDiagnosisId",
+              "properties": {
+                "patientDiagnosisId": {
+                  "templatable": true,
+                  "type": "number",
+                  "title": "Patient Diagnosis Id",
+                  "default": 0,
+                  "rxnt": "PatientDiagnosisId"
+                },
+                "description": {
+                  "templatable": true,
+                  "type": "string",
+                  "title": "Description",
+                  "rxnt": "Diagnosis.Name"
+                },
+                "icd10": {
+                  "templatable": true,
+                  "type": "string",
+                  "title": "ICD10-CM",
+                  "rxnt": "Diagnosis.ICD10.Code"
+                },
+                "icd9": {
+                  "templatable": true,
+                  "type": "string",
+                  "title": "ICD9-CM",
+                  "rxnt": [
+                    "Diagnosis.ICD9.Code",
+                    "Diagnosis.ICD9.Description"
+                  ]
+                },
+                "onSetDate": {
+                  "templatable": true,
+                  "type": "string",
+                  "title": "Onset Date",
+                  "rxnt": "OnSetDate",
+                  "format": "date"
+                },
+                "statusDate": {
+                  "templatable": true,
+                  "type": "string",
+                  "title": "Status Date",
+                  "rxnt": "StatusDate",
+                  "format": "date"
+                },
+                "diagnosedDate": {
+                  "templatable": true,
+                  "type": "string",
+                  "title": "Date Diagnosed",
+                  "rxnt": "DateAdded",
+                  "format": "date"
+                },
+                "status": {
+                  "templatable": true,
+                  "type": "string",
+                  "title": "Status",
+                  "rxnt": [
+                    "Status.StatusId",
+                    "Status.Name"
+                  ],
+                  "enum": [
+                    "255",
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7"
+                  ],
+                  "enumNames": [
+                    "Not Indicated",
+                    "In-Active",
+                    "Active",
+                    "Resolved",
+                    "Chronic",
+                    "Intermittent",
+                    "Recurrent",
+                    "Rule Out",
+                    "Ruled Out"
+                  ],
+                  "default": "1"
+                },
+                "type": {
+                  "templatable": true,
+                  "type": "string",
+                  "title": "Type",
+                  "rxnt": [
+                    "Type.TypeId",
+                    "Type.Name"
+                  ],
+                  "enum": [
+                    "0",
+                    "1",
+                    "5",
+                    "6",
+                    "7",
+                    "2",
+                    "3",
+                    "4",
+                    "8",
+                    "9",
+                    "10"
+                  ],
+                  "enumNames": [
+                    "",
+                    "Diagnosis",
+                    "Admitting",
+                    "Final",
+                    "Working",
+                    "Condition",
+                    "Symptom",
+                    "Finding",
+                    "Complaint",
+                    "Functional Limitation",
+                    "Problem"
+                  ],
+                  "default": "0"
+                },
+                "severity": {
+                  "templatable": true,
+                  "type": "string",
+                  "title": "Severity",
+                  "rxnt": "Severity.Name"
+                },
+                "isSelected": {
+                  "type": "boolean",
+                  "title": "Active",
+                  "rxnt": "IsSelected",
+                  "default": true
+                }
+              },
+              "defaultFilterKey": "isSelected"
+            }
+          }
+        }
+      },
+      "plan": {
+        "title": "Medication Management Session",
+        "type": "object",
+        "required": [],
+        "properties": {
+          "rowOne": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "safelyComply": {
+                "title": "Patient, Guardian or Parent Appear to Understand and Agree to Safely Comply with Plan:",
+                "type": "string"
+              },
+              "yes": {
+                "title": "Yes",
+                "type": "boolean"
+              },
+              "txtYes": {
+                "title": "Yes",
+                "type": "string"
+              },
+              "no": {
+                "title": "No",
+                "type": "boolean"
+              },
+              "txtNo": {
+                "title": "No",
+                "type": "string"
+              }
+            }
+          },
+          "rowTwo": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "sideEffects": {
+                "title": "Side Effects of Meds Prescribed were Discussed with Patien, Guardian and/or Parent:",
+                "type": "string"
+              },
+              "yes": {
+                "title": "Yes",
+                "type": "boolean"
+              },
+              "txtYes": {
+                "title": "Yes",
+                "type": "string"
+              },
+              "no": {
+                "title": "No",
+                "type": "boolean"
+              },
+              "txtNo": {
+                "title": "No",
+                "type": "string"
+              }
+            }
+          },
+          "rowThree": {
+            "type": "object",
+            "title": "",
+            "required": {},
+            "rxnt": "",
+            "properties": {
+              "returnVisit": {
+                "title": "Return Visit:",
+                "type": "string"
+              },
+              "txtReturnVisit": {
+                "title": "Return Visit",
+                "type": "string"
+              },
+              "psychiatristSignature": {
+                "title": "Psychiatrist's Signature",
+                "type": "string"
+              },
+              "txtSignature": {
+                "title": "Psychiatrist's Signature",
+                "type": "string"
+              },
+              "gaf": {
+                "title": "GAF:",
+                "type": "string"
+              },
+              "txtGaf": {
+                "title": "GAF",
+                "type": "string"
+              },
+              "pastYear": {
+                "title": "Past Year:",
+                "type": "string"
+              },
+              "txtPastYear": {
+                "title": "Past Year",
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "uiSchema": {
+    "ui:order": [
+      "encounterDate",
+      "visitType",
+      "intro",
+      "medicationData",
+      "tabular",
+      "dxData",
+      "plan"
+    ],
+    "navConf": {
+      "navs": [
+        {
+          "nav": "MedicationManagement_NPC",
+          "name": "MedicationManagement_NPC",
+          "icon": "glyphicons glyphicons-list-alt"
+        }
+      ],
+      "order": [
+        "MedicationManagement_NPC"
+      ]
+    },
+    "encounterDate": {
+      "classNames": "col-md-2 col-xs-2",
+      "ui:field": "rdp",
+      "rdp": {
+        "placeholder": "MM/DD/YYYY"
+      }
+    },
+    "visitType": {
+      "classNames": "col-md-2 col-xs-2",
+      "ui:placeholder": "Chose One"
+    },
+    "intro": {
+      "classNames": "col-md-12 individualComponent",
+      "ui:field": "collapsible",
+      "nav": "MedicationManagement_NPC",
+      "ui:order": [
+        "textname",
+        "date",
+        "therapist",
+        "insurance"
+      ],
+      "pdfRender": "inputComponents",
+      "pdfListType": "none",
+      "textname": {
+        "classNames": "col-md-3",
+        "ui:placeholder": "patient Name",
+        "pdfProp": "textWithColumnTitle"
+      },
+      "date": {
+        "classNames": "col-md-3",
+        "ui:field": "rdp",
+        "pdfProp": "textWithColumnTitle"
+      },
+      "therapist": {
+        "classNames": "col-md-3",
+        "ui:placeholder": "Therapist:",
+        "pdfProp": "textWithColumnTitle"
+      },
+      "insurance": {
+        "classNames": "col-md-3",
+        "ui:placeholder": "Insurance:",
+        "pdfProp": "textWithColumnTitle"
+      },
+      "ui:options": {
+        "label": false
+      },
+      "collapse": {
+        "field": "ObjectField",
+        "collapsed": false
+      }
+    },
+    "medicationData": {
+      "classNames": "col-md-12 individualComponent",
+      "ui:field": "collapsible",
+      "ui:order": [
+        "medicationsNoActive",
+        "medications"
+      ],
+      "medicationsNoActive": {
+        "classNames": "col-md-6",
+        "pdfProp": "noFindings"
+      },
+      "medications": {
+        "pdfProp": "tableBody",
+        "classNames": "col-md-12",
+        "ui:field": "table",
+        "table": {
+          "tableCols": [
+            {
+              "dataField": "drugId",
+              "hidden": true
+            },
+            {
+              "dataField": "drugName",
+              "columnWidth": "40%",
+              "enableHelpText": true,
+              "field": "asyncTypeahead",
+              "uiSchema": {
+                "focusOnMount": true,
+                "asyncTypeahead": {
+                  "url": "/EHRV8PatientEncounterAPIServices/ehrv8/encounter/SearchMedications",
+                  "optionsPath": "Drugs",
+                  "mapping": {
+                    "drugName": "DrugName",
+                    "drugId": "DrugId"
+                  },
+                  "minLength": 2,
+                  "labelKey": "DrugName",
+                  "cleanAfterSelection": true
+                }
+              }
+            },
+            {
+              "dataField": "dosage",
+              "columnWidth": "15%",
+              "enableHelpText": true,
+              "className": "col-md-2",
+              "columnClassName": "col-md-2",
+              "editColumnClassName": "col-md-2"
+            },
+            {
+              "dataField": "quantity",
+              "columnWidth": "15%",
+              "enableHelpText": true,
+              "className": "col-md-1",
+              "columnClassName": "col-md-1",
+              "editColumnClassName": "col-md-1"
+            },
+            {
+              "dataField": "unit",
+              "enableHelpText": true,
+              "className": "col-md-1",
+              "columnClassName": "col-md-1",
+              "editColumnClassName": "col-md-1"
+            },
+            {
+              "dataField": "refills",
+              "enableHelpText": true,
+              "className": "col-md-1",
+              "columnClassName": "col-md-1",
+              "editColumnClassName": "col-md-1"
+            },
+            {
+              "dataField": "useGeneric",
+              "columnWidth": "15%",
+              "className": "col-md-1",
+              "columnClassName": "col-md-1",
+              "editColumnClassName": "col-md-1"
+            },
+            {
+              "dataField": "patientMedId",
+              "hidden": true
+            },
+            {
+              "dataField": "startDate",
+              "dataFormat": "MM/DD/YYYY",
+              "field": "rdp",
+              "uiSchema": {
+                "rdp": {
+                  "placeholder": "MM/DD/YYYY",
+                  "inputProps": {
+                    "className": "form-control",
+                    "type": "text"
+                  }
+                }
+              },
+              "columnWidth": "15%",
+              "defaultCurrentDate": true,
+              "enableHelpText": true
+            },
+            {
+              "dataField": "isSelected",
+              "hidden": true
+            }
+          ],
+          "focusOnAdd": 1,
+          "rightActions": [
+            {
+              "action": "update",
+              "className": "table-action",
+              "columnClassName": "table-action",
+              "editColumnClassName": "table-action",
+              "icon": "glyphicons glyphicons-remove-circle glyPhiconRedColor",
+              "actionConfiguration": {
+                "action": "update",
+                "mandatoryField": [
+                  "drugName"
+                ],
+                "fieldToUpdate": [
+                  "isSelected"
+                ],
+                "filterField": "isSelected",
+                "actionCompletedIcon": "glyphicon glyphicon-refresh",
+                "actionCompletedClassName": "deleted-row"
+              }
+            }
+          ]
+        }
+      },
+      "ui:options": {
+        "label": false
+      },
+      "collapse": {
+        "field": "ObjectField",
+        "collapsed": false,
+        "icon": {
+          "add": "glyphicon glyphicon-plus-sign"
+        },
+        "addTo": "medications",
+        "actions": [
+          {
+            "component": "UpdateButton",
+            "props": {
+              "title": "Update",
+              "field": "medicationData"
+            }
+          }
+        ]
+      },
+      "pdfRender": "table",
+      "removeWhenTrue": [
+        "medicationsNoActive"
+      ],
+      "isRxntTable": true
+    },
+    "tabular": {
+      "classNames": "col-md-12 individualComponent",
+      "ui:field": "collapsible",
+      "nav": "MedicationManagement_NPC",
+      "pdfRender": "tabular",
+      "header": {
+        "classNames": "col-md-12",
+        "category": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "header"
+        },
+        "wnl": {
+          "classNames": "col-md-3 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "header"
+        },
+        "abnormalities": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "header"
+        },
+        "ui:order": [
+          "category",
+          "wnl",
+          "abnormalities"
+        ]
+      },
+      "rowOne": {
+        "classNames": "col-md-12",
+        "speech": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "wnl": {
+          "classNames": "col-md-3"
+        },
+        "txtSpeech": {
+          "classNames": "col-md-4",
+          "ui:options": {
+            "label": false
+          },
+          "ui:placeholder": "Speech",
+          "pdfProp": "textWithOutColumnTitle"
+        },
+        "ui:order": [
+          "speech",
+          "wnl",
+          "txtSpeech"
+        ]
+      },
+      "rowtwo": {
+        "classNames": "col-md-12",
+        "moodaffect": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "wnl": {
+          "classNames": "col-md-3"
+        },
+        "txtAbnormalities": {
+          "classNames": "col-md-4",
+          "ui:options": {
+            "label": false
+          },
+          "ui:placeholder": "Mood/affect",
+          "pdfProp": "textWithOutColumnTitle"
+        },
+        "ui:order": [
+          "moodaffect",
+          "wnl",
+          "txtAbnormalities"
+        ]
+      },
+      "rowthree": {
+        "classNames": "col-md-12",
+        "orientation": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "wnl": {
+          "classNames": "col-md-3"
+        },
+        "txtOrientation": {
+          "classNames": "col-md-4",
+          "ui:options": {
+            "label": false
+          },
+          "ui:placeholder": "Orientation",
+          "pdfProp": "textWithOutColumnTitle"
+        },
+        "ui:order": [
+          "orientation",
+          "wnl",
+          "txtOrientation"
+        ]
+      },
+      "rowfour": {
+        "classNames": "col-md-12",
+        "attentionconc": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "wnl": {
+          "classNames": "col-md-3"
+        },
+        "txtattention": {
+          "classNames": "col-md-4",
+          "ui:options": {
+            "label": false
+          },
+          "ui:placeholder": "Memory/attention/conc",
+          "pdfProp": "textWithOutColumnTitle"
+        },
+        "ui:order": [
+          "attentionconc",
+          "wnl",
+          "txtattention"
+        ]
+      },
+      "rowfive": {
+        "classNames": "col-md-12",
+        "symptoms": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "wnl": {
+          "classNames": "col-md-3"
+        },
+        "txtPsychoticsymptoms": {
+          "classNames": "col-md-4",
+          "ui:options": {
+            "label": false
+          },
+          "ui:placeholder": "Psychotic symptoms",
+          "pdfProp": "textWithOutColumnTitle"
+        },
+        "ui:order": [
+          "symptoms",
+          "wnl",
+          "txtPsychoticsymptoms"
+        ]
+      },
+      "rowsix": {
+        "classNames": "col-md-12",
+        "agitation": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "wnl": {
+          "classNames": "col-md-3"
+        },
+        "txtHyperactivity": {
+          "classNames": "col-md-4",
+          "ui:options": {
+            "label": false
+          },
+          "ui:placeholder": "Hyperactivity/agitation",
+          "pdfProp": "textWithOutColumnTitle"
+        },
+        "ui:order": [
+          "agitation",
+          "wnl",
+          "txtHyperactivity"
+        ]
+      },
+      "rowseven": {
+        "classNames": "col-md-12",
+        "thoughts": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "wnl": {
+          "classNames": "col-md-3"
+        },
+        "txtSuicidal": {
+          "classNames": "col-md-4",
+          "ui:options": {
+            "label": false
+          },
+          "ui:placeholder": "Suicidal thoughts",
+          "pdfProp": "textWithOutColumnTitle"
+        },
+        "ui:order": [
+          "thoughts",
+          "wnl",
+          "txtSuicidal"
+        ]
+      },
+      "roweights": {
+        "classNames": "col-md-12",
+        "plan": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "wnl": {
+          "classNames": "col-md-3"
+        },
+        "txtSuicidalplan": {
+          "classNames": "col-md-4",
+          "ui:options": {
+            "label": false
+          },
+          "ui:placeholder": "Suicidal plan",
+          "pdfProp": "textWithOutColumnTitle"
+        },
+        "ui:order": [
+          "plan",
+          "wnl",
+          "txtSuicidalplan"
+        ]
+      },
+      "rowten": {
+        "classNames": "col-md-12",
+        "homicplans": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "wnl": {
+          "classNames": "col-md-3"
+        },
+        "txtHomicidalthoughts": {
+          "classNames": "col-md-4",
+          "ui:options": {
+            "label": false
+          },
+          "ui:placeholder": "Homicidal thoughts",
+          "pdfProp": "textWithOutColumnTitle"
+        },
+        "ui:order": [
+          "homicplans",
+          "wnl",
+          "txtHomicidalthoughts"
+        ]
+      },
+      "rowTwentyone": {
+        "classNames": "col-md-12",
+        "homicidallplan": {
+          "classNames": "col-md-4 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "wnl": {
+          "classNames": "col-md-3"
+        },
+        "txtHomicidalplan": {
+          "classNames": "col-md-4",
+          "ui:options": {
+            "label": false
+          },
+          "ui:placeholder": "Homicidal plan",
+          "pdfProp": "textWithOutColumnTitle"
+        },
+        "ui:order": [
+          "homicidallplan",
+          "wnl",
+          "txtHomicidalplan"
+        ]
+      },
+      "rowTwentytwo": {
+        "classNames": "col-md-12",
+        "generalappearance": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "appearance": {
+          "classNames": "col-md-1",
+          "ui:options": {
+            "label": false
+          },
+          "ui:placeholder": "General appearance",
+          "pdfProp": "textWithColumnTitle"
+        },
+        "ui:order": [
+          "generalappearance",
+          "appearance"
+        ]
+      },
+      "columnScore": {
+        "classNames": "col-md-12",
+        "p": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "pp": {
+          "classNames": "col-md-1",
+          "ui:options": {
+            "label": false
+          },
+          "ui:placeholder": "P",
+          "pdfProp": "textWithColumnTitle"
+        },
+        "bp": {
+          "classNames": "col-md-2",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "removeInPdf"
+        },
+        "bpa": {
+          "classNames": "col-md-1",
+          "ui:options": {
+            "label": false
+          },
+          "ui:placeholder": "BP",
+          "pdfProp": "textWithColumnTitle"
+        },
+        "weight": {
+          "classNames": "col-md-2",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "removeInPdf"
+        },
+        "weighte": {
+          "classNames": "col-md-1",
+          "ui:options": {
+            "label": false
+          },
+          "ui:placeholder": "WEIGHT",
+          "pdfProp": "textWithColumnTitle"
+        },
+        "ui:order": [
+          "p",
+          "pp",
+          "bp",
+          "bpa",
+          "weight",
+          "weighte"
+        ]
+      },
+      "rowTwentythree": {
+        "classNames": "col-md-12",
+        "others": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "oth": {
+          "classNames": "col-md-1",
+          "ui:options": {
+            "label": false
+          },
+          "ui:placeholder": "others",
+          "pdfProp": "textWithColumnTitle"
+        },
+        "ui:order": [
+          "others",
+          "oth"
+        ]
+      },
+      "ui:order": [
+        "header",
+        "rowOne",
+        "rowtwo",
+        "rowthree",
+        "rowfour",
+        "rowfive",
+        "rowsix",
+        "rowseven",
+        "roweights",
+        "rowten",
+        "rowTwentyone",
+        "rowTwentytwo",
+        "columnScore",
+        "rowTwentythree"
+      ],
+      "ui:options": {
+        "label": false
+      },
+      "collapse": {
+        "field": "ObjectField",
+        "collapsed": false
+      }
+    },
+    "dxData": {
+      "classNames": "col-md-12 individualComponent",
+      "nav": "MedicationManagement_NPC",
+      "ui:field": "collapsible",
+      "ui:order": [
+        "diagnosis_no_problems",
+        "diagnosis"
+      ],
+      "diagnosis_no_problems": {
+        "classNames": "col-md-6",
+        "pdfProp": "noFindings"
+      },
+      "diagnosis": {
+        "classNames": "col-md-12",
+        "ui:field": "table",
+        "table": {
+          "tableCols": [
+            {
+              "dataField": "patientDiagnosisId",
+              "hidden": true
+            },
+            {
+              "dataField": "description",
+              "columnWidth": "22%",
+              "width": "30%",
+              "editable": false
+            },
+            {
+              "dataField": "icd10",
+              "columnWidth": "13%",
+              "width": "10%",
+              "editable": false
+            },
+            {
+              "dataField": "icd9",
+              "width": "10%",
+              "editable": false
+            },
+            {
+              "dataField": "onSetDate",
+              "dataFormat": "MM/DD/YYYY",
+              "field": "rdp",
+              "uiSchema": {
+                "rdp": {
+                  "placeholder": "MM/DD/YYYY",
+                  "inputProps": {
+                    "className": "form-control",
+                    "type": "text"
+                  }
+                }
+              },
+              "columnWidth": "13%",
+              "defaultCurrentDate": true,
+              "width": "10%"
+            },
+            {
+              "dataField": "statusDate",
+              "dataFormat": "MM/DD/YYYY",
+              "field": "rdp",
+              "uiSchema": {
+                "rdp": {
+                  "placeholder": "MM/DD/YYYY",
+                  "inputProps": {
+                    "className": "form-control",
+                    "type": "text"
+                  }
+                }
+              },
+              "columnWidth": "12%",
+              "defaultCurrentDate": true,
+              "width": "10%"
+            },
+            {
+              "dataField": "diagnosedDate",
+              "dataFormat": "MM/DD/YYYY",
+              "field": "rdp",
+              "uiSchema": {
+                "rdp": {
+                  "placeholder": "MM/DD/YYYY",
+                  "inputProps": {
+                    "className": "form-control",
+                    "type": "text"
+                  }
+                }
+              },
+              "columnWidth": "15%",
+              "defaultCurrentDate": true
+            },
+            {
+              "dataField": "status",
+              "width": "10%"
+            },
+            {
+              "dataField": "type",
+              "columnWidth": "12%",
+              "width": "10%"
+            },
+            {
+              "dataField": "severity",
+              "columnWidth": "13%",
+              "width": "10%"
+            },
+            {
+              "dataField": "isSelected",
+              "hidden": true
+            }
+          ],
+          "rightActions": [
+            {
+              "action": "moveup",
+              "className": "table-action",
+              "columnClassName": "table-action",
+              "editColumnClassName": "table-action",
+              "icon": "glyphicon glyphicon-arrow-up"
+            },
+            {
+              "action": "movedown",
+              "className": "table-action",
+              "columnClassName": "table-action",
+              "editColumnClassName": "table-action",
+              "icon": "glyphicon glyphicon-arrow-down"
+            },
+            {
+              "action": "update",
+              "className": "table-action",
+              "columnClassName": "table-action",
+              "editColumnClassName": "table-action",
+              "icon": "glyphicons glyphicons-remove-circle glyPhiconRedColor",
+              "actionConfiguration": {
+                "action": "update",
+                "mandatoryField": [
+                  "description"
+                ],
+                "fieldToUpdate": [
+                  "isSelected"
+                ],
+                "filterField": "isSelected",
+                "actionCompletedIcon": "glyphicon glyphicon-refresh",
+                "actionCompletedClassName": "deleted-row"
+              }
+            }
+          ]
+        },
+        "pdfProp": "tableBody"
+      },
+      "ui:options": {
+        "label": false
+      },
+      "collapse": {
+        "field": "ObjectField",
+        "collapsed": false,
+        "icon": {
+          "add": "glyphicon glyphicon-plus-sign"
+        },
+        "addTo": "diagnosis",
+        "actions": [
+          {
+            "component": "UpdateButton",
+            "props": {
+              "title": "Update",
+              "field": "dxData"
+            }
+          }
+        ],
+        "addElement": "imoAdd"
+      },
+      "pdfRender": "table",
+      "removeWhenTrue": [
+        "diagnosis_no_problems"
+      ],
+      "isRxntTable": true
+    },
+    "plan": {
+      "classNames": "col-md-12 individualComponent",
+      "ui:field": "collapsible",
+      "nav": "MedicationManagement_NPC",
+      "pdfRender": "tabular",
+      "rowOne": {
+        "classNames": "col-md-12",
+        "safelyComply": {
+          "classNames": "col-md-6 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "yes": {
+          "classNames": "col-md-1"
+        },
+        "txtYes": {
+          "classNames": "col-md-1",
+          "ui:options": {
+            "label": false
+          },
+          "ui:placeholder": "Yes",
+          "pdfProp": "textWithOutColumnTitle"
+        },
+        "no": {
+          "classNames": "col-md-1"
+        },
+        "txtNo": {
+          "classNames": "col-md-1",
+          "ui:options": {
+            "label": false
+          },
+          "ui:placeholder": "No",
+          "pdfProp": "textWithOutColumnTitle"
+        },
+        "ui:order": [
+          "safelyComply",
+          "yes",
+          "txtYes",
+          "no",
+          "txtNo"
+        ]
+      },
+      "rowTwo": {
+        "classNames": "col-md-12",
+        "sideEffects": {
+          "classNames": "col-md-6 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "yes": {
+          "classNames": "col-md-1"
+        },
+        "txtYes": {
+          "classNames": "col-md-1",
+          "ui:options": {
+            "label": false
+          },
+          "ui:placeholder": "Yes",
+          "pdfProp": "textWithOutColumnTitle"
+        },
+        "no": {
+          "classNames": "col-md-1"
+        },
+        "txtNo": {
+          "classNames": "col-md-1",
+          "ui:options": {
+            "label": false
+          },
+          "ui:placeholder": "No",
+          "pdfProp": "textWithOutColumnTitle"
+        },
+        "ui:order": [
+          "sideEffects",
+          "yes",
+          "txtYes",
+          "no",
+          "txtNo"
+        ]
+      },
+      "rowThree": {
+        "classNames": "col-md-12",
+        "returnVisit": {
+          "classNames": "col-md-1 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "txtReturnVisit": {
+          "classNames": "col-md-1",
+          "ui:options": {
+            "label": false
+          },
+          "ui:placeholder": "Return Visit",
+          "pdfProp": "textWithOutColumnTitle"
+        },
+        "psychiatristSignature": {
+          "classNames": "col-md-2 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "txtSignature": {
+          "classNames": "col-md-1",
+          "ui:options": {
+            "label": false
+          },
+          "ui:placeholder": "Signature",
+          "pdfProp": "textWithOutColumnTitle"
+        },
+        "gaf": {
+          "classNames": "col-md-1 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "txtGaf": {
+          "classNames": "col-md-1",
+          "ui:options": {
+            "label": false
+          },
+          "ui:placeholder": "GAF",
+          "pdfProp": "textWithOutColumnTitle"
+        },
+        "pastYear": {
+          "classNames": "col-md-1 margin-tp-10",
+          "ui:field": "simpleLabel",
+          "simpleLabel": {
+            "styles": {
+              "color": "black",
+              "fontSize": 14
+            }
+          },
+          "pdfProp": "simpleLabelQuestion"
+        },
+        "txtPastYear": {
+          "classNames": "col-md-1",
+          "ui:options": {
+            "label": false
+          },
+          "ui:placeholder": "Past Year",
+          "pdfProp": "textWithOutColumnTitle"
+        },
+        "ui:order": [
+          "returnVisit",
+          "txtReturnVisit",
+          "psychiatristSignature",
+          "txtSignature",
+          "gaf",
+          "txtGaf",
+          "pastYear",
+          "txtPastYear"
+        ]
+      },
+      "ui:order": [
+        "rowOne",
+        "rowTwo",
+        "rowThree"
+      ],
+      "ui:options": {
+        "label": false
+      },
+      "collapse": {
+        "field": "ObjectField",
+        "collapsed": false
+      }
+    },
+    "pdfPreview": {
+      "pdfVersion": 1,
+      "defaultView": {
+        "order": [
+          "intro",
+          "medicationData",
+          "tabular",
+          "dxData",
+          "plan"
+        ]
+      }
+    }
+  },
+  "rules": [
+    {
+      "conditions": {
+        "medicationData$medicationsNoActive": "truthy"
+      },
+      "event": {
+        "type": "remove",
+        "params": {
+          "field": "medicationData.medications"
+        }
+      }
+    },
+    {
+      "conditions": {
+        "dxData$diagnosis_no_problems": "truthy"
+      },
+      "event": {
+        "type": "remove",
+        "params": {
+          "field": "dxData.diagnosis"
+        }
+      }
+    }
+  ]
+}

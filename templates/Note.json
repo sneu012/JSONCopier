@@ -1,0 +1,121 @@
+{
+  "schema": {
+    "required": [],
+    "type": "object",
+    "properties": {
+      "encounterDate": {
+        "type": "string",
+        "title": "Encounter Date",
+        "format": "date"
+      },
+      "visitType": {
+        "type": "string",
+        "title": "Visit Type",
+        "enum": [
+          "OFICE",
+          "OTHER"
+        ],
+        "enumNames": [
+          "Office",
+          "Other"
+        ]
+      },
+      "subject": {
+        "type": "string",
+        "title": "Subject ",
+        "templatable": true
+      },
+      "NOTE": {
+        "type": "string",
+        "title": "NOTE",
+        "default": "<p></p>"
+      }
+    }
+  },
+  "uiSchema": {
+    "ui:order": [
+      "encounterDate",
+      "visitType",
+      "subject",
+      "NOTE"
+    ],
+    "navConf": {
+      "navs": [
+        {
+          "nav": "Note",
+          "name": "Note",
+          "icon": " glyphicons glyphicons-list-alt"
+        }
+      ],
+      "order": [
+        "Note"
+      ]
+    },
+    "encounterDate": {
+      "classNames": "col-md-2 col-xs-2",
+      "ui:field": "rdp",
+      "rdp": {
+        "placeholder": "MM/DD/YYYY"
+      }
+    },
+    "visitType": {
+      "classNames": "col-md-2 col-xs-2",
+      "ui:placeholder": "Chose One"
+    },
+    "subject": {
+      "nav": "Note",
+      "classNames": "col-md-12 individualComponent",
+      "pdfRender": "rte"
+    },
+    "NOTE": {
+      "classNames": "col-md-12 individualComponent",
+      "nav": "Note",
+      "ui:field": "collapsible",
+      "pdfRender": "rte",
+      "updateOnBlur": true,
+      "draftRte": {
+        "debounce": {
+          "interval": 600,
+          "shouldDebounce": true
+        },
+        "toolbar": {
+          "options": [
+            "inline",
+            "blockType",
+            "fontSize",
+            "fontFamily",
+            "list",
+            "colorPicker",
+            "history"
+          ],
+          "inline": {
+            "options": [
+              "bold",
+              "italic",
+              "underline",
+              "strikethrough"
+            ]
+          }
+        }
+      },
+      "ui:options": {
+        "label": false
+      },
+      "collapse": {
+        "field": "draftRte",
+        "collapsed": false
+      },
+      "ui:autofocus": true
+    },
+    "pdfPreview": {
+      "pdfVersion": 1,
+      "defaultView": {
+        "order": [
+          "subject",
+          "NOTE"
+        ]
+      }
+    }
+  },
+  "rules": []
+}

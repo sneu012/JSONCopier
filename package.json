@@ -1,0 +1,16 @@
+{
+  "name": "copier",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js /Users/samip/Documents/Projects/RxNT/template_projects/schema-generator/templates /Users/samip/Documents/Projects/RxNT/template_projects/encounter-mongo-services/MongoDBScripts/03_Scripts/01_forms"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "readline-sync": "^1.4.9"
+  }
+}
